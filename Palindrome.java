@@ -13,6 +13,9 @@ public class Palindrome {
         s = "nahnah";
         result = isPalindromePermutation(s);
         System.out.println(result);
+        s = "abzdefgabhdefg";
+        result = isPalindromePermutation(s);
+        System.out.println(result);
     }
 
     // Given a string, write a function to check if it is a permutation of a palindrome
@@ -45,11 +48,12 @@ public class Palindrome {
             }
             else {
                 count++;
-                if (count == 1 && (s.length() % 2 == 0)) {
+                if (count == 2) {
                     return false;
                 }
-                else if (count == 2) {
-                    return false;
+                else {
+                    c = "" + copy.charAt(0);
+                    copy = copy.substring(1);
                 }
             }
         }
